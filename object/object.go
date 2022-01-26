@@ -28,7 +28,7 @@ func Parse(res *s3.HeadObjectOutput, key *string, gcm cipher.AEAD, master *memgu
 
 	o.Restore = "?????"
 
-	if res.StorageClass != nil && *res.StorageClass == "DEEP_ARCHIVE" {
+	if res.StorageClass != nil && *res.StorageClass == "GLACIER" {
 		o.Restore = "DEEPS"
 	}
 
